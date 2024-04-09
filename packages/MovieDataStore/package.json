@@ -1,0 +1,19 @@
+{
+  "name": "@assessment/datastore",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.12.6",
+    "typescript": "^5.4.4"
+  },
+  "scripts": {
+    "build": "tsc"
+  },
+  "workspaces": {
+    "nohoist": [
+      "**"
+    ]
+  }
+}
