@@ -1,4 +1,4 @@
-type TMovieInfo = {
+type MovieDetails = {
   id: string;
   name: string;
   description: string;
@@ -11,4 +11,4 @@ type TMovieInfo = {
   featuredReview: string;
 };
 
-export default TMovieInfo;
+export default MovieDetails;

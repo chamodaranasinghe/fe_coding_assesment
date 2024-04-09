@@ -2,7 +2,7 @@
     This represent the object shape of the response from the API when getting movie info.
 */
 
-export type InfoResult = {
+export type DetailsResult = {
   short: Short;
   imdbId: string;
   top: Top;
