@@ -1,0 +1,11 @@
+{
+  "name": "@assessment/root",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {},
+  "scripts": {
+    "mobile:ios": "yarn workspace @assessment/mobile ios"
+  }
+}
