@@ -13,7 +13,12 @@ export enum RemoteTaskType {
   Info = "tt",
 }
 
-//this function is used to make the http request to the remote server
+/**
+ * This function makes a GET request to the remote server with the given remoteTaskType and query.
+ * @param remoteTaskType - The type of the remote task (search or info)
+ * @param query - The query to search for
+ * @returns An HTTPResponse object
+ */
 export async function httpGet(
   remoteTaskType: RemoteTaskType,
   query: string
@@ -33,7 +38,12 @@ export async function httpGet(
   }
 }
 
-//this function is used to bind the query params to the url
+/**
+ * This function binds the remoteTaskType and query to the remote server url.
+ * @param remoteTaskType - The type of the remote task (search or info)
+ * @param query - The query to search for
+ * @returns The url with the remoteTaskType and query parameters
+ */
 export function bindParametersToRemoteTaskType(
   remoteTaskType: RemoteTaskType,
   query: string

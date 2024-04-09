@@ -33,7 +33,11 @@ const names: string[] = [
   "Interstellar",
 ];
 
-//this function is used to generate 10 random movies
+/**
+ * This function generates random movies by making requests to the API with random movie names.
+ * @param amount - The amount of random movies to generate
+ * @returns An array of TMovieSummary objects
+ */
 export async function generateRandomMovies(
   amount = 10
 ): Promise<TMovieSummary[]> {
@@ -51,6 +55,11 @@ export async function generateRandomMovies(
   return Array.from(uniqueMovies).slice(0, amount);
 }
 
+/**
+ * This function processes the search results and returns an array of TMovieSummary objects.
+ * @param result - The search result object
+ * @returns An array of TMovieSummary objects
+ */
 export function processSearchResults(
   result: MovieSearchResult
 ): TMovieSummary[] {
