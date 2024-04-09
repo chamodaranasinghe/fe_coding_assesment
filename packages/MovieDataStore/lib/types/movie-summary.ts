@@ -1,4 +1,4 @@
-type TMovieSummary = {
+type MovieSummary = {
   "#IMDB_ID": string;
   "#TITLE": string;
   "#YEAR": number;
@@ -9,4 +9,4 @@ type TMovieSummary = {
   "#IMDB_URL": string;
 };
 
-export default TMovieSummary;
+export default MovieSummary;

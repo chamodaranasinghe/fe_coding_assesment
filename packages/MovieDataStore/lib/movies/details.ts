@@ -3,3 +3,13 @@
 */
 
 import { httpGet, RemoteTaskType } from "../http/api";
+import MovieInfo from "../types/movie-details";
+
+export async function getMovieDetails(imdbID: string): Promise<MovieInfo> {
+  const response = await httpGet(RemoteTaskType.Info, imdbID);
+  if (response.status === "success") {
+    return response.data as MovieInfo;
+  } else {
+    throw new Error("Failed to get movie details");
+  }
+}
