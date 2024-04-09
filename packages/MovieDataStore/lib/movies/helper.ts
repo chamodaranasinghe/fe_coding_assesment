@@ -1,4 +1,4 @@
-import { MovieSearchResult } from "../types/http-response";
+import { MovieSearchResult } from "../types/api-responses/movie-search-result";
 import TMovieSummary from "../types/movie-summary";
 
 /*

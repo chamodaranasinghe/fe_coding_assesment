@@ -1,9 +1,7 @@
 import sample from "./sample-movie-search-result.json";
-import { MovieSearchResult } from "../lib/types/http-response";
-import {
-  generateRandomMovies,
-  processSearchResults,
-} from "../lib/movies/random";
+import { generateRandomMovies } from "../lib/movies/random";
+import { MovieSearchResult } from "../lib/types/api-responses/movie-search-result";
+import { processSearchResults } from "../lib/movies/helper";
 
 describe("Random Movies", () => {
   it("should process json response correctly", () => {
