@@ -8,6 +8,7 @@
 import { httpGet, RemoteTaskType } from "../http/api";
 import { MovieSearchResult } from "../types/http-response";
 import TMovieSummary from "../types/movie-summary";
+import { processSearchResults } from "./helper";
 
 const names: string[] = [
   "Inception",
@@ -35,11 +36,11 @@ const names: string[] = [
 
 /**
  * This function generates random movies by making requests to the API with random movie names.
- * @param amount - The amount of random movies to generate
- * @returns An array of TMovieSummary objects
+ * @param {number} amount - The amount of random movies to generate
+ * @returns {TMovieSummary[]} An array of TMovieSummary objects
  */
 export async function generateRandomMovies(
-  amount = 10
+  amount: number = 10
 ): Promise<TMovieSummary[]> {
   let uniqueMovies = new Set<TMovieSummary>();
   while (uniqueMovies.size < amount) {
@@ -53,26 +54,4 @@ export async function generateRandomMovies(
   }
   //return only the amount of movies requested from start to amount
   return Array.from(uniqueMovies).slice(0, amount);
-}
-
-/**
- * This function processes the search results and returns an array of TMovieSummary objects.
- * @param result - The search result object
- * @returns An array of TMovieSummary objects
- */
-export function processSearchResults(
-  result: MovieSearchResult
-): TMovieSummary[] {
-  return result.description.map((summary) => {
-    return {
-      "#IMDB_ID": summary["#IMDB_ID"],
-      "#TITLE": summary["#TITLE"],
-      "#YEAR": summary["#YEAR"],
-      "#RANK": summary["#RANK"],
-      "#ACTORS": summary["#ACTORS"].split(",").map((actor) => actor.trim()),
-      "#AKA": summary["#AKA"],
-      "#IMG_POSTER": summary["#IMG_POSTER"] ?? null,
-      "#IMDB_URL": summary["#IMDB_URL"],
-    };
-  });
 }

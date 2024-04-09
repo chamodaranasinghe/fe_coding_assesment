@@ -15,9 +15,9 @@ export enum RemoteTaskType {
 
 /**
  * This function makes a GET request to the remote server with the given remoteTaskType and query.
- * @param remoteTaskType - The type of the remote task (search or info)
- * @param query - The query to search for
- * @returns An HTTPResponse object
+ * @param {RemoteTaskType} remoteTaskType - The type of the remote task (search or info)
+ * @param {string} query - The query to search for
+ * @returns {HTTPResponse} An HTTPResponse object
  */
 export async function httpGet(
   remoteTaskType: RemoteTaskType,
@@ -40,9 +40,9 @@ export async function httpGet(
 
 /**
  * This function binds the remoteTaskType and query to the remote server url.
- * @param remoteTaskType - The type of the remote task (search or info)
- * @param query - The query to search for
- * @returns The url with the remoteTaskType and query parameters
+ * @param {RemoteTaskType} remoteTaskType - The type of the remote task (search or info)
+ * @param {string} query - The query to search for
+ * @returns {string} The url with the remoteTaskType and query parameters
  */
 export function bindParametersToRemoteTaskType(
   remoteTaskType: RemoteTaskType,
