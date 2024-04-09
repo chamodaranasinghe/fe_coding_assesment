@@ -1,4 +1,4 @@
-type MovieSummary = {
+export type MovieSummary = {
   "#IMDB_ID": string;
   "#TITLE": string;
   "#YEAR": number;
@@ -8,5 +8,3 @@ type MovieSummary = {
   "#IMG_POSTER": string | null;
   "#IMDB_URL": string;
 };
-
-export default MovieSummary;

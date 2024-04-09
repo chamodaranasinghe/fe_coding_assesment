@@ -1,4 +1,4 @@
-type MovieDetails = {
+export type MovieDetails = {
   id: string;
   name: string;
   description: string;
@@ -11,9 +11,7 @@ type MovieDetails = {
   featuredReviews: FeaturedReview[];
 };
 
-type FeaturedReview = {
+export type FeaturedReview = {
   summary: string;
   text: string;
 };
-
-export default MovieDetails;
