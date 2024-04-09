@@ -1,4 +1,8 @@
-import { bindParametersToRemoteTaskType, httpGet, RemoteTaskType } from "./api";
+import {
+  bindParametersToRemoteTaskType,
+  httpGet,
+  RemoteTaskType,
+} from "../lib/http/api";
 
 describe("API", () => {
   it("should correctly bind parameter to remote task", () => {
@@ -24,4 +28,6 @@ describe("API", () => {
       expect(response.data).toBeNull();
     });
   });
+
+  // TODO- Add more test cases for httpGet function to test different scenarios, errors, etc.
 });
