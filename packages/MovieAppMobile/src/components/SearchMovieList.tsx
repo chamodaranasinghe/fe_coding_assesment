@@ -3,7 +3,7 @@
 */
 
 import React from 'react';
-import {FlatList, StyleSheet, TouchableOpacity, View} from 'react-native';
+import {FlatList, StyleSheet, View} from 'react-native';
 import {useAppSelector} from '../hooks/ReduxToolKitHooks';
 import ErrorLabel from './ErrorLabel';
 import LoadingLabel from './LoadingLabel';
@@ -21,14 +21,7 @@ const SearchMovieList: React.FC = () => {
         contentContainerStyle={styles.list}
         data={searchedMovies}
         keyExtractor={item => item['#IMDB_ID']}
-        renderItem={({item}) => (
-          <TouchableOpacity
-            onPress={() => {
-              /* Handle movie press */
-            }}>
-            <MovieListItem summary={item} />
-          </TouchableOpacity>
-        )}
+        renderItem={({item}) => <MovieListItem summary={item} />}
       />
     </View>
   );

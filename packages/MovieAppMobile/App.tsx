@@ -11,6 +11,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {NavigationContainer} from '@react-navigation/native';
 import {Provider} from 'react-redux';
 import {store} from './src/Store';
+import MovieDetailPage from './src/screens/MovieDetailPage';
 
 const Stack = createNativeStackNavigator();
 
@@ -19,7 +20,8 @@ function App(): React.JSX.Element {
     <Provider store={store}>
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name="Home" component={HomePage} />
+          <Stack.Screen name="HomePage" component={HomePage} />
+          <Stack.Screen name="MovieDetailPage" component={MovieDetailPage} />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>
