@@ -17,7 +17,7 @@ const movieDetailSlice = createSlice({
   name: 'MovieDetail',
   initialState: initialState,
   reducers: {
-    setMovieDetail: (state, action: PayloadAction<MovieDetails>) => {
+    setMovieDetail: (state, action: PayloadAction<MovieDetails | null>) => {
       state.movie = action.payload;
     },
     setMovieDetailLoading: (state, action: PayloadAction<boolean>) => {
