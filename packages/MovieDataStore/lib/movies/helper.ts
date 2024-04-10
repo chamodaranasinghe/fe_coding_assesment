@@ -1,7 +1,7 @@
 import { DetailsResult } from "../types/api-responses/movie-details";
 import { MovieSearchResult } from "../types/api-responses/movie-search-result";
-import MovieDetails from "../types/movie-details";
-import MovieSummary from "../types/movie-summary";
+import { MovieDetails } from "../types/movie-details";
+import { MovieSummary } from "../types/movie-summary";
 
 /*
     This is a helper file that contains the functions for movie API

@@ -7,8 +7,8 @@
 
 import { httpGet, RemoteTaskType } from "../http/api";
 import { MovieSearchResult } from "../types/api-responses/movie-search-result";
+import { MovieSummary } from "../types/movie-summary";
 
-import TMovieSummary from "../types/movie-summary";
 import { processSearchResults } from "./helper";
 
 const names: string[] = [
@@ -42,8 +42,8 @@ const names: string[] = [
  */
 export async function generateRandomMovies(
   amount: number = 10
-): Promise<TMovieSummary[]> {
-  let uniqueMovies = new Set<TMovieSummary>();
+): Promise<MovieSummary[]> {
+  let uniqueMovies = new Set<MovieSummary>();
   while (uniqueMovies.size < amount) {
     const randomName = names[Math.floor(Math.random() * names.length)];
     const response = await httpGet(RemoteTaskType.Search, randomName);

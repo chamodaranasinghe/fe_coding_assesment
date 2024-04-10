@@ -4,7 +4,7 @@
 
 import { httpGet, RemoteTaskType } from "../http/api";
 import { MovieSearchResult } from "../types/api-responses/movie-search-result";
-import TMovieSummary from "../types/movie-summary";
+import { MovieSummary } from "../types/movie-summary";
 import { processSearchResults } from "./helper";
 
 /**
@@ -12,7 +12,7 @@ import { processSearchResults } from "./helper";
  * @param {string} query - The query to search for
  * @returns {TMovieSummary[]} An array of TMovieSummary objects or an empty array if no results are found
  */
-export async function searchMovies(query: string): Promise<TMovieSummary[]> {
+export async function searchMovies(query: string): Promise<MovieSummary[]> {
   const response = await httpGet(RemoteTaskType.Search, query);
   if (response.status === "success") {
     const result = response.data as MovieSearchResult;
