@@ -17,6 +17,7 @@ can be used in search bar component to load random movies when user click cancel
 */
 
 const useRandomMovies = () => {
+  //TODO write unit tests for the hooks
   const dispatch = useAppDispatch();
   const randomMovies = async () => {
     dispatch(setRandomMoviesLoading(true));

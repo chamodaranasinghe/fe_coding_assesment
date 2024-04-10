@@ -11,7 +11,13 @@ import {
   setMovieDetailLoading,
 } from '../reducers/DetailedMovieReducer';
 
+/**
+ * A reusable hook to fetch movie details from the API
+ * @param {string} movieId - The  ID of the movie
+ */
+
 const useMovieDetails = (movieId: string) => {
+  //TODO write unit tests for the hooks
   const dispatch = useAppDispatch();
   const loadMovieDetails = async () => {
     dispatch(setMovieDetail(null));
