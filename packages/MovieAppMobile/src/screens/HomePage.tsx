@@ -7,7 +7,8 @@ import React, {useEffect} from 'react';
 import SearchBar from '../components/SearchBar';
 import PaddedView from '../components/PaddedView';
 import useRandomMovies from '../hooks/useRandomMovies';
-import RandomMovieList from '../components/RandomMovieList';
+//import RandomMovieList from '../components/RandomMovieList';
+import SearchMovieList from '../components/SearchMovieList';
 
 const HomePage: React.FC = () => {
   const {randomMovies} = useRandomMovies();
@@ -21,7 +22,8 @@ const HomePage: React.FC = () => {
   return (
     <PaddedView>
       <SearchBar />
-      <RandomMovieList />
+      {/* <RandomMovieList /> */}
+      <SearchMovieList />
     </PaddedView>
   );
 };

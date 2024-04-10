@@ -1,9 +1,11 @@
 import {configureStore} from '@reduxjs/toolkit';
 import RandomMovieReducer from './reducers/RandomMovieReducer';
+import SearchMovieReducer from './reducers/SearchMovieReducer';
 
 export const store = configureStore({
   reducer: {
     RandomMovies: RandomMovieReducer,
+    SearchMovies: SearchMovieReducer,
   },
 });
 
