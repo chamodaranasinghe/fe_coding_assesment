@@ -10,9 +10,11 @@
     "test": "jest"
   },
   "dependencies": {
+    "@assessment/datastore": "1.0.0",
+    "@reduxjs/toolkit": "^2.2.3",
     "react": "18.2.0",
     "react-native": "0.73.6",
-    "@assessment/datastore": "1.0.0"
+    "react-redux": "^9.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
