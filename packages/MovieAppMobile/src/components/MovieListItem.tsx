@@ -6,6 +6,7 @@ import {MovieSummary} from '@assessment/datastore';
 import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {Text, View, StyleSheet, Image, TouchableOpacity} from 'react-native';
+import useMovieDetails from '../hooks/useMovieDetails';
 
 type MovieListItemProps = {
   summary: MovieSummary;
@@ -13,7 +14,9 @@ type MovieListItemProps = {
 
 const MovieListItem: React.FC<MovieListItemProps> = ({summary}) => {
   const navigation = useNavigation();
+  const {loadMovieDetails} = useMovieDetails(summary['#IMDB_ID']);
   const handlePress = () => {
+    loadMovieDetails();
     navigation.navigate('MovieDetailPage' as never);
   };
   return (
