@@ -17,6 +17,10 @@ export async function searchMovies(query: string): Promise<MovieSummary[]> {
   if (response.status === "success") {
     const result = response.data as MovieSearchResult;
     return processSearchResults(result);
+  } else if (response.status === "error") {
+    throw new Error(`Error fetching movies for ${query}`);
+  } else if (response.status === "network-error") {
+    throw new Error(`Network error fetching movies for ${query}`);
   } else {
     return [];
   }

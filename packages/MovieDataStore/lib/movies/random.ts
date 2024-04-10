@@ -51,6 +51,8 @@ export async function generateRandomMovies(
       const result = response.data as MovieSearchResult;
       const movies = processSearchResults(result);
       movies.forEach((movie) => uniqueMovies.add(movie));
+    } else {
+      throw new Error(`Error fetching movies for ${randomName}`);
     }
   }
   //return only the amount of movies requested from start to amount

@@ -17,7 +17,7 @@ export async function getMovieDetails(imdbID: string): Promise<MovieDetails> {
   if (response.status === "success") {
     return processMovieDetails(response.data as unknown as DetailsResult);
   } else {
-    throw new Error("Failed to get movie details");
+    throw new Error(`Error fetching movie details for ${imdbID}`);
   }
 }
 //TODO - Add unit tests for this file
