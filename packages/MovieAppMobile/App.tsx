@@ -2,10 +2,11 @@
 Main entrypoint of the App
  */
 
-import NavigationContainer from '@react-navigation/native/lib/typescript/src/NavigationContainer';
+
 import React from 'react';
 import HomePage from './src/screens/HomePage';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { NavigationContainer } from '@react-navigation/native';
 
 const Stack = createNativeStackNavigator();
 
