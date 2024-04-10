@@ -9,6 +9,8 @@ const MovieDetailPage: React.FC = () => {
   const movieDetails = useAppSelector(state => state.MovieDetails.movie);
   const loading = useAppSelector(state => state.MovieDetails.loading);
   const error = useAppSelector(state => state.MovieDetails.error);
+  //TODO description is rended in MD format and fix
+  //TODO review text rendered in HTML format. Fix
   return (
     <PaddedView>
       <ScrollView contentContainerStyle={styles.container}>
