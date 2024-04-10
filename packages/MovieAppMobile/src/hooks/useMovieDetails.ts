@@ -22,9 +22,11 @@ const useMovieDetails = (movieId: string) => {
   const loadMovieDetails = async () => {
     dispatch(setMovieDetail(null));
     dispatch(setMovieDetailLoading(true));
+    dispatch(setMovieDetailError(null));
     try {
       const movieDetails = await getMovieDetails(movieId);
       dispatch(setMovieDetail(movieDetails));
+      dispatch(setMovieDetailError(null));
     } catch (e) {
       dispatch(setMovieDetail(null));
       dispatch(setMovieDetailError('Failed to fetch movie details'));

@@ -26,6 +26,7 @@ const useRandomMovies = () => {
       const generated = await generateRandomMovies();
       dispatch(setRandomMoviesLoading(false));
       dispatch(setRandomMovies(generated));
+      dispatch(setRandomMoviesError(null));
     } catch (error) {
       dispatch(setRandomMovies([]));
       dispatch(setRandomMoviesError('Error fetching random movies'));

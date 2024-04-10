@@ -20,6 +20,7 @@ const SearchBar: React.FC = () => {
     try {
       const searchedMovies = await searchMovies(searchText);
       dispatch(setSearchMovies(searchedMovies));
+      dispatch(setSearchMoviesError(null));
     } catch (error) {
       dispatch(setSearchMoviesError('Error searching movies'));
       dispatch(setSearchMovies([]));
