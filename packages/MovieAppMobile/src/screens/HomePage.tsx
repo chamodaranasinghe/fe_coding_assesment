@@ -3,14 +3,25 @@
     Onces user searches for a movie, it will show the search results. User can click on any movie to see the details of the movie.
 */
 
-import React from 'react';
+import React, {useEffect} from 'react';
 import SearchBar from '../components/SearchBar';
 import PaddedView from '../components/PaddedView';
+import useRandomMovies from '../hooks/useRandomMovies';
+import RandomMovieList from '../components/RandomMovieList';
 
 const HomePage: React.FC = () => {
+  const {randomMovies} = useRandomMovies();
+
+  useEffect(() => {
+    randomMovies();
+    //need to load on component mount
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <PaddedView>
       <SearchBar />
+      <RandomMovieList />
     </PaddedView>
   );
 };

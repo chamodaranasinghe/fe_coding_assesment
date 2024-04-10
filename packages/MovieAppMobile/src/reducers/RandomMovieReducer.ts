@@ -4,12 +4,13 @@ import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 interface RandomMovieState {
   loading: boolean;
   list: MovieSummary[];
-  error?: string;
+  error: string | null;
 }
 
 let initialState: RandomMovieState = {
   loading: false,
   list: [],
+  error: null,
 };
 
 const randomMovieSlice = createSlice({
@@ -22,7 +23,7 @@ const randomMovieSlice = createSlice({
     setRandomMoviesLoading: (state, action: PayloadAction<boolean>) => {
       state.loading = action.payload;
     },
-    setRandomMoviesError: (state, action: PayloadAction<string>) => {
+    setRandomMoviesError: (state, action: PayloadAction<string | null>) => {
       state.error = action.payload;
     },
   },

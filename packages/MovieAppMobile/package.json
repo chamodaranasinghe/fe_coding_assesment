@@ -10,7 +10,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@assessment/datastore": "1.0.0",
+    "@assessment/datastore": "1.1.0",
     "@react-navigation/native": "^6.1.17",
     "@react-navigation/native-stack": "^6.9.26",
     "@reduxjs/toolkit": "^2.2.3",
@@ -43,7 +43,7 @@
   },
   "workspaces": {
     "nohoist": [
-      "**/**"
+      "**"
     ]
   }
 }

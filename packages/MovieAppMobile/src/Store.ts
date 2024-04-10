@@ -1,7 +1,10 @@
 import {configureStore} from '@reduxjs/toolkit';
+import RandomMovieReducer from './reducers/RandomMovieReducer';
 
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    RandomMovies: RandomMovieReducer,
+  },
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
