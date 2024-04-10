@@ -4,14 +4,15 @@
 */
 
 import React from 'react';
-import {View, Text} from 'react-native';
+import SearchBar from '../components/SearchBar';
+import PaddedView from '../components/PaddedView';
 
-function HomePage() {
+const HomePage: React.FC = () => {
   return (
-    <View>
-      <Text>HomePage</Text>
-    </View>
+    <PaddedView>
+      <SearchBar />
+    </PaddedView>
   );
-}
+};
 
 export default HomePage;
