@@ -12,6 +12,7 @@ import { processSearchResults } from "./helper";
  * @param {string} query - The query to search for
  * @returns {TMovieSummary[]} An array of TMovieSummary objects or an empty array if no results are found
  */
+//TODO: Implement the search by keyword function (currently API support only search by title)
 export async function searchMovies(query: string): Promise<MovieSummary[]> {
   const response = await httpGet(RemoteTaskType.Search, query);
   if (response.status === "success") {
