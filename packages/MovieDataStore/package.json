@@ -14,6 +14,8 @@
   },
   "scripts": {
     "prepare": "npm run build",
+    "prepack": "npm run build",
+    "postinstall": "npm run build",
     "build": "tsc",
     "test": "jest",
     "test:watch": "jest --watchAll"
@@ -22,5 +24,8 @@
     "nohoist": [
       "**"
     ]
-  }
+  },
+  "files": [
+    "dist"
+  ]
 }

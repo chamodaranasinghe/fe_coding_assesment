@@ -4,8 +4,12 @@
   "workspaces": [
     "packages/*"
   ],
-  "devDependencies": {},
+  "devDependencies": {
+    "lerna": "^8.1.2"
+  },
   "scripts": {
+    "postinstall": "lerna run prepare",
     "mobile:ios": "yarn workspace @assessment/mobile ios"
-  }
+  },
+  "dependencies": {}
 }
