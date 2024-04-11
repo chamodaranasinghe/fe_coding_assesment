@@ -7,11 +7,13 @@ import React, {useEffect} from 'react';
 import SearchBar from '../components/SearchBar';
 import PaddedView from '../components/PaddedView';
 import useRandomMovies from '../hooks/useRandomMovies';
-//import RandomMovieList from '../components/RandomMovieList';
+import RandomMovieList from '../components/RandomMovieList';
 import SearchMovieList from '../components/SearchMovieList';
+import {useAppSelector} from '../hooks/ReduxToolKitHooks';
 
 const HomePage: React.FC = () => {
   const {randomMovies} = useRandomMovies();
+  const searchIsActive = useAppSelector(state => state.SearchMovies.isActive);
 
   useEffect(() => {
     randomMovies();
@@ -22,8 +24,8 @@ const HomePage: React.FC = () => {
   return (
     <PaddedView>
       <SearchBar />
-      {/* <RandomMovieList /> */}
-      <SearchMovieList />
+
+      {searchIsActive ? <SearchMovieList /> : <RandomMovieList />}
     </PaddedView>
   );
 };

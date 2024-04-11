@@ -6,6 +6,7 @@ import React from 'react';
 import {View, TextInput, StyleSheet} from 'react-native';
 import {useAppDispatch} from '../hooks/ReduxToolKitHooks';
 import {
+  setSearchIsActive,
   setSearchMovies,
   setSearchMoviesError,
   setSearchMoviesLoading,
@@ -17,6 +18,7 @@ const SearchBar: React.FC = () => {
   const search = async (searchText: string) => {
     dispatch(setSearchMoviesLoading(true));
     dispatch(setSearchMoviesError(null));
+    dispatch(setSearchIsActive(true));
     try {
       const searchedMovies = await searchMovies(searchText);
       dispatch(setSearchMovies(searchedMovies));
