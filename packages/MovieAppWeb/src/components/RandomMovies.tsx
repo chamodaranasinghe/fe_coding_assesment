@@ -1,6 +1,6 @@
 import React from "react";
 import { useAppSelector } from "../hooks/ReduxHooks";
-import { Container } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 import MovieCard from "./MovieCard";
 import Loading from "./Loading";
 import ErrorLabel from "./Error";
@@ -13,10 +13,11 @@ const RandomMovies: React.FC = () => {
     if (isLoading) return <Loading />;
     if (!randomMovies) return <></>;
     return (<>
-        <Container fluid>
-            {isLoading && <div>Loading...</div>}
-            {error && <div>Error</div>}
-            {randomMovies.map(movie => <MovieCard key={movie["#IMDB_ID"]} movie={movie} />)}
+        <Container fluid className="p-10">
+            <Row className="justify-content-center">
+                {randomMovies.map(movie => <MovieCard key={movie["#IMDB_ID"]} movie={movie} />)}
+            </Row>
+
         </Container>
     </>);
 };
