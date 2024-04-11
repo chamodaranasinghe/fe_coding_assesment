@@ -5,12 +5,14 @@ interface SearchMovieState {
   loading: boolean;
   list: MovieSummary[];
   error: string | null;
+  isActive: boolean;
 }
 
 const initialState: SearchMovieState = {
   loading: false,
   list: [],
   error: null,
+  isActive: false,
 };
 
 const searchMovieSlice = createSlice({
@@ -26,9 +28,16 @@ const searchMovieSlice = createSlice({
     setSearchMoviesError: (state, action: PayloadAction<string | null>) => {
       state.error = action.payload;
     },
+    setSearchIsActive: (state, action: PayloadAction<boolean>) => {
+      state.isActive = action.payload;
+    },
   },
 });
 
-export const { setSearchMovies, setSearchMoviesLoading, setSearchMoviesError } =
-  searchMovieSlice.actions;
+export const {
+  setSearchMovies,
+  setSearchMoviesLoading,
+  setSearchMoviesError,
+  setSearchIsActive,
+} = searchMovieSlice.actions;
 export default searchMovieSlice.reducer;

@@ -3,7 +3,7 @@ import { searchMovies } from "@assessment/datastore";
 import React from "react";
 import { InputGroup, Form, Button } from "react-bootstrap";
 import { useAppDispatch } from "../hooks/ReduxHooks";
-import { setSearchMoviesLoading, setSearchMoviesError, setSearchMovies } from "../reducers/SearchMovieReducer";
+import { setSearchMoviesLoading, setSearchMoviesError, setSearchMovies, setSearchIsActive } from "../reducers/SearchMovieReducer";
 
 
 const SearchBar: React.FC = () => {
@@ -11,6 +11,7 @@ const SearchBar: React.FC = () => {
     const dispatch = useAppDispatch();
     const search = async (searchText: string) => {
         dispatch(setSearchMoviesLoading(true));
+        dispatch(setSearchIsActive(true));
         dispatch(setSearchMoviesError(null));
         try {
             const searchedMovies = await searchMovies(searchText);
