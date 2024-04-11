@@ -9,7 +9,10 @@
   },
   "scripts": {
     "postinstall": "lerna run prepare",
-    "mobile:ios": "yarn workspace @assessment/mobile ios"
+    "mobile:ios": "yarn workspace @assessment/mobile ios",
+    "web:dev": "yarn workspace @assessment/web dev",
+    "web:build": "yarn workspace @assessment/web build",
+    "web:preview": "yarn workspace @assessment/web preview"
   },
   "dependencies": {}
 }
