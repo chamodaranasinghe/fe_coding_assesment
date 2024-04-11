@@ -56,5 +56,6 @@ export async function generateRandomMovies(
     }
   }
   //return only the amount of movies requested from start to amount
+  //TODO: Uniqueness is not working. Fix the Bug
   return Array.from(uniqueMovies).slice(0, amount);
 }
