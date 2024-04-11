@@ -16,7 +16,7 @@ There are 3 packages in the mono repo. Yarn workspaces is used to setup the mono
 
 ## Debug and Run Instructions
 
-Install the dependancies
+Install the dependencies
 
     yarn install
 
