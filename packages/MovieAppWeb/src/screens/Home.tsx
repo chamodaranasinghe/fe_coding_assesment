@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
-import RandomMovies from "../components/RandomMovies";
+//import RandomMovies from "../components/RandomMovies";
 import useRandomMovies from "../hooks/useRandomMovies";
 import { Container, Navbar } from "react-bootstrap";
 import SearchBar from "../components/SearchBar";
+import SearchMovies from "../components/SearchMovies";
 
 const Home: React.FC = () => {
     const { randomMovies } = useRandomMovies();
@@ -22,7 +23,8 @@ const Home: React.FC = () => {
                 </Container>
             </Navbar>
         </Container>
-        <RandomMovies />
+        {/*  <RandomMovies /> */}
+        <SearchMovies />
     </>);
 };
 
