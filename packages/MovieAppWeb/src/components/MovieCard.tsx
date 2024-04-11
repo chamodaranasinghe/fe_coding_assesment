@@ -9,11 +9,11 @@ type MovieCardProps = {
 
 const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
     return (<><Card style={{ width: '18rem' }}>
-        {movie['#IMG_POSTER'] ? <Card.Img variant="top" src={movie['#IMG_POSTER']} /> : <Card.Img variant="top" src={require('../assets/no-poster.jpeg')} />}
+        {movie['#IMG_POSTER'] ? <Card.Img variant="top" src={movie['#IMG_POSTER']} /> : <Card.Img variant="top" src={'no-poster.jpeg'} />}
         <Card.Body>
             <Card.Title>{movie['#TITLE']}</Card.Title>
             <Card.Text>
-                {movie['#AKA']}
+                {movie['#YEAR']}
             </Card.Text>
             <Button variant="primary">View</Button>
         </Card.Body>
